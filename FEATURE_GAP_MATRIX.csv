@@ -1,0 +1,21 @@
+Feature,Target priority,Current state from inspection,Required next action,Acceptance evidence,Open decision
+Workspace authentication,P0,Backend foundation present; hosted verification absent,Review current implementation and add integration tests,Unauthenticated and non-member requests denied,Identity provider and active workspace rules
+Onboarding list,P0,Backend read route present,Verify filters pagination and role scope,Authorized user sees only allowed records,Exact filter fields and statuses
+Onboarding detail,P0,Backend read route present,Verify complete safe detail response,Detail includes agreed related records,Which related objects appear in MVP
+Tasks,P0,Read and proposal writes partial,Fix proposal update defect and verify lifecycle,Task owner status due date and update visible,Allowed status transitions
+Commitments,P0,Read and proposal writes partial,Verify fields overdue semantics and writes,Commitment owner due date status and overdue state correct,Terminal statuses
+Proposal submission,P0,Implemented with reported partial-update SQL defect,Align API schemas and SQL RPC; rerun SQL suite,Create and partial update proposals persist safely,Required fields per entity
+Approval/rejection,P0,Backend routes/RPCs present; expiry inconsistency reported,Align expiry rules and test permissions/transactions,Authorized reviewer can decide; audit and record update atomic,Who can approve
+Activity/audit,P0,Partial proposal lifecycle audit,Verify coverage and safe payloads,Approved change creates traceable history,Activity vs security audit split
+Frontend/P0 demo UI,P0,Not present in inspected repository,Decide smallest UI scope then implement separately,Reviewer completes core journey in browser,Framework choice and demo requirement
+MCP adapter,P0 if assignment requires agent integration,Not present in repository; adapter notes only,Obtain Agent 1 source and define delegated auth contract,Read tools work and write tool only submits proposal,Identity forwarding feasibility
+Events,P1,Proposal-based writes partial; dedicated CRUD absent,Confirm MVP and define fields/flows,Create/update event and display on onboarding,Required event fields
+Decisions,P1,Proposal-based writes partial; dedicated CRUD absent,Confirm MVP and define fields/flows,Record decision with owner/date/context,Required decision fields
+Comments,P1,Proposal-based writes partial; no dedicated route,Keep AI access denied by default; verify parent integrity,Comment attaches to exactly one valid parent,Who can read comments
+Task dependencies,P1,Database integrity reported; API management absent,Define dependency UI/API and status rules,No cross-onboarding edge, self-link or cycle,Completion blocking rule
+Custom fields,P1,Schema/integrity partial; value-type validation gap reported,Add definition-to-value type validation,Invalid type/entity rejected,Supported field types
+Notifications,P1,Schema/RLS only; no demonstrated delivery,Define in-app notification scope,Assignment/proposal notification appears once,Trigger types
+Membership management,P1,Schema/read policies; management APIs absent,Define invite/deactivate/role change scope,Unauthorized role change denied,Invite mechanism
+Search/filtering,P1,Structured search partial,Document semantics and test pagination stability,Filters combine predictably,Substring vs full text
+Analytics/dashboard,P2,Not established in repository,Defer unless assignment requires,Only build after core journey works,Required KPI definitions
+External integrations,P2,Not established in repository,Keep external references only in MVP,External URL stored safely,Which integrations are required
